@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Embsys Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/company.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="perfect-background"></div>
+        <div class="deep-blur-overlay"></div>
+        
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Embsys Intelligence</span>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('services') }}" class="nav-link">Services</a>
+                <a href="{{ url_for('pricing') }}" class="nav-link">Pricing</a>
+                <a href="{{ url_for('contact') }}" class="nav-link active">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="{{ url_for('chat') }}" class="btn-contact btn-signin">Try Getsta</a>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="page-hero">
+                <h1>Get in Touch</h1>
+                <p>Ready to transform your business with AI? Let's talk.</p>
+            </section>
+            
+            <section class="contact-section">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="contact-item">
+                            <strong>Email:</strong> hello@embsysintelligence.com
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong> +1 (555) 123-4567
+                        </div>
+                        <div class="contact-item">
+                            <strong>Address:</strong> 123 Innovation Drive, Tech City, TC 12345
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>Send us a Message</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/company.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Embsys Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/company.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="perfect-background"></div>
+        <div class="deep-blur-overlay"></div>
+        
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Embsys Intelligence</span>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('services') }}" class="nav-link active">Services</a>
+                <a href="{{ url_for('pricing') }}" class="nav-link">Pricing</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="{{ url_for('chat') }}" class="btn-contact btn-signin">Try Getsta</a>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="page-hero">
+                <h1>Our Services</h1>
+                <p>Comprehensive AI solutions for modern businesses</p>
+            </section>
+            
+            <section class="services-grid">
+                <div class="service-card">
+                    <h3>Getsta AI Chat</h3>
+                    <p>Intelligent document analysis and conversational AI that understands your business context.</p>
+                    <a href="{{ url_for('chat') }}" class="service-link">Try Now →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Document Processing</h3>
+                    <p>Advanced document parsing and analysis for PDFs, Word docs, presentations, and more.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Custom AI Solutions</h3>
+                    <p>Tailored AI implementations designed specifically for your business needs and workflows.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>API Integration</h3>
+                    <p>Seamless integration with your existing systems through our robust API infrastructure.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/company.js') }}"></script>
+</body>
+</html>

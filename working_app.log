@@ -1,0 +1,59 @@
+2025-08-08 23:06:23,862 - chatbot_modules.utils.simple_vector_store - INFO - Loaded existing collection: document_store
+2025-08-08 23:06:23,863 - __main__ - INFO - Vector store initialized successfully
+2025-08-08 23:06:23,869 - __main__ - INFO - Vector store ready - Collection: document_store, Documents: 0
+2025-08-08 23:06:23,869 - __main__ - INFO - LLM model initialized: gemini-2.0-flash-exp
+2025-08-08 23:06:23,944 - __main__ - INFO - Document parser initialized
+2025-08-08 23:06:23,962 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.232.66:4000
+2025-08-08 23:06:23,962 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 23:06:23,963 - werkzeug - INFO -  * Restarting with stat
+2025-08-08 23:06:24,698 - chatbot_modules.utils.simple_vector_store - INFO - Loaded existing collection: document_store
+2025-08-08 23:06:24,699 - __main__ - INFO - Vector store initialized successfully
+2025-08-08 23:06:24,704 - __main__ - INFO - Vector store ready - Collection: document_store, Documents: 0
+2025-08-08 23:06:24,704 - __main__ - INFO - LLM model initialized: gemini-2.0-flash-exp
+2025-08-08 23:06:24,741 - __main__ - INFO - Document parser initialized
+2025-08-08 23:06:24,746 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:06:24,755 - werkzeug - INFO -  * Debugger PIN: 289-453-737
+2025-08-08 23:06:29,985 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:29] "GET / HTTP/1.1" 200 -
+2025-08-08 23:06:30,003 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:30] "[36mGET /static/css/company.css HTTP/1.1[0m" 304 -
+2025-08-08 23:06:30,004 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:30] "[36mGET /static/js/company.js HTTP/1.1[0m" 304 -
+2025-08-08 23:06:30,011 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:30] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-08-08 23:06:30,162 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:30] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-08 23:06:31,796 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "[32mGET /start-free HTTP/1.1[0m" 302 -
+2025-08-08 23:06:31,808 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "GET /chat HTTP/1.1" 200 -
+2025-08-08 23:06:31,821 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "[36mGET /static/css/chatbot.css HTTP/1.1[0m" 304 -
+2025-08-08 23:06:31,823 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "[36mGET /static/js/chatbot.js HTTP/1.1[0m" 304 -
+2025-08-08 23:06:31,839 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "GET /api/health HTTP/1.1" 200 -
+2025-08-08 23:06:31,848 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "[36mGET /static/icon.png HTTP/1.1[0m" 304 -
+2025-08-08 23:06:31,851 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:06:31] "[36mGET /static/icon.png HTTP/1.1[0m" 304 -
+2025-08-08 23:06:54,385 - __main__ - INFO - Searching vector store for query: 'tell me about N8N tool?...'
+2025-08-08 23:06:54,387 - __main__ - INFO - Collection has 0 documents
+2025-08-08 23:06:54,387 - __main__ - WARNING - No documents in collection - upload some documents first
+2025-08-08 23:06:54,388 - __main__ - INFO - Generating response for query: 'tell me about N8N tool?...'
+2025-08-08 23:06:54,388 - __main__ - INFO - Context chunks available: 0
+2025-08-08 23:06:54,388 - __main__ - INFO - LLM model available: True
+2025-08-08 23:06:54,388 - __main__ - INFO - Sending request to LLM without context
+2025-08-08 23:07:00,852 - __main__ - INFO - LLM response generated successfully
+2025-08-08 23:07:00,853 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:07:00] "POST /api/query HTTP/1.1" 200 -
+2025-08-08 23:07:52,293 - __main__ - INFO - File saved: uploads/Store_Inventory_Analysis_Corrected.csv
+2025-08-08 23:07:53,240 - chatbot_modules.utils.simple_vector_store - INFO - Added 1 documents to vector store
+2025-08-08 23:07:53,240 - __main__ - INFO - Successfully processed Store_Inventory_Analysis_Corrected.csv: 1 chunks
+2025-08-08 23:07:53,241 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:07:53] "POST /api/upload HTTP/1.1" 200 -
+2025-08-08 23:08:09,080 - __main__ - INFO - Searching vector store for query: 'total sales ?...'
+2025-08-08 23:08:09,083 - __main__ - INFO - Collection has 1 documents
+2025-08-08 23:08:09,185 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-08-08 23:08:09,187 - chatbot_modules.utils.simple_vector_store - INFO - Raw similarity scores before filtering: [0]
+2025-08-08 23:08:09,187 - chatbot_modules.utils.simple_vector_store - INFO - Similarity threshold: 0.0
+2025-08-08 23:08:09,187 - chatbot_modules.utils.simple_vector_store - INFO - Search returned 1 results for query: total sales ?...
+2025-08-08 23:08:09,187 - __main__ - INFO - Found 1 relevant chunks with scores: [0]
+2025-08-08 23:08:09,187 - __main__ - INFO - All similarity scores: [0]
+2025-08-08 23:08:09,187 - __main__ - INFO - Max similarity score: 0
+2025-08-08 23:08:09,187 - __main__ - INFO - Min similarity score: 0
+2025-08-08 23:08:09,187 - __main__ - INFO - Generating response for query: 'total sales ?...'
+2025-08-08 23:08:09,187 - __main__ - INFO - Context chunks available: 1
+2025-08-08 23:08:09,188 - __main__ - INFO - LLM model available: True
+2025-08-08 23:08:09,188 - __main__ - INFO - Sending request to LLM with context
+2025-08-08 23:08:10,415 - __main__ - INFO - LLM response generated successfully
+2025-08-08 23:08:10,417 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:08:10] "POST /api/query HTTP/1.1" 200 -

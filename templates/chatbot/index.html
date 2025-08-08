@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getsta - AI Chat Assistant</title>
+    <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.png') }}" type="image/png">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 6V18" stroke="currentColor" stroke-width="2" />
+                        <path d="M4 12H20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <span>Getsta AI</span>
+                </div>
+                <a href="{{ url_for('index') }}" class="back-to-home">← Back to Home</a>
+            </div>
+            <div class="header-right">
+                <div class="memory-status" id="memoryStatus" title="Memory status">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Memory Active</span>
+                </div>
+                <button class="header-clear-btn" onclick="clearMemory()" title="Clear memory">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="10" y1="11" x2="10" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="14" y1="11" x2="14" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <span class="user-count">History</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-content">
+                        <h1>Hello! 👋 Welcome to Getsta</h1>
+
+                        <h2>What can I help you with today?</h2>
+
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <button class="attach-btn" onclick="document.getElementById('fileInput').click()"
+                                    title="Upload documents">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21.44 11.05l-9.19 9.19a6.003 6.003 0 01-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 01-2.83-2.83l8.49-8.48"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+
+                                <input type="text" id="messageInput" placeholder="Ask anything" autocomplete="off">
+
+                                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" />
+                                        <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="messages" id="messages"></div>
+
+                <!-- Chat Input (shown when not in welcome mode) -->
+                <div class="chat-input-container" id="chatInputContainer" style="display: none;">
+                    <div class="input-wrapper">
+                        <button class="attach-btn" onclick="document.getElementById('fileInput').click()"
+                            title="Upload documents">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.44 11.05l-9.19 9.19a6.003 6.003 0 01-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 01-2.83-2.83l8.49-8.48"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+
+                        <input type="text" id="chatMessageInput" placeholder="Ask anything" autocomplete="off">
+
+                        <button class="send-btn" id="chatSendBtn" onclick="sendChatMessage()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" />
+                                <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <button class="footer-btn" onclick="exploreUsecases()">
+                Explore Usecases
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hidden file input -->
+    <input type="file" id="fileInput" multiple accept=".pdf,.docx,.pptx,.csv,.txt,.md" style="display: none;">
+
+    <!-- Upload Status Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Status</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="uploadStatus">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Processing documents...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+
+</html>

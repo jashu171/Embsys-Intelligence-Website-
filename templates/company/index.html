@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embsys Intelligent - Redefining the Future</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/company.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Perfect Background Layer -->
+        <div class="perfect-background"></div>
+
+        <!-- Deep Black Blur Overlay -->
+        <div class="deep-blur-overlay"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Embsys Intelligence</span>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('services') }}" class="nav-link">Services</a>
+                <a href="{{ url_for('pricing') }}" class="nav-link">Pricing</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <div class="cart-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13M17 13H7"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="cart-badge">2</span>
+                </div>
+                <button class="btn-contact btn-signin">Sign in/Login</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Badge -->
+            <div class="badge">
+                <span class="badge-year">2025</span>
+                <span class="badge-text">Next-Gen AI Studio</span>
+            </div>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">
+                    Embsys Intelligent<br>
+                    <span class="hero-subtitle">Redefining the Future.</span>
+                </h1>
+
+                <div class="hero-description">
+                    <p>Creating latest solutions that redefine innovation.</p>
+                    <p>Stay ahead with AI-powered technology for the future.</p>
+                </div>
+
+                <div class="cta-buttons">
+              
+                    <a href="{{ url_for('start_free') }}" class="btn btn-secondary">Start for Free Now →</a>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-header">
+                    <h2 class="pricing-title">Simple, straightforward pricing</h2>
+                    <p class="pricing-subtitle">Join 500,000+ professionals who use Embsys to boost their SaaS</p>
+
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle">
+                        <span class="billing-option active">Monthly</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="billing-toggle" class="toggle-input">
+                            <label for="billing-toggle" class="toggle-label"></label>
+                        </div>
+                        <span class="billing-option">Yearly</span>
+                        <span class="save-badge">Save up to 15% by paying yearly</span>
+                    </div>
+                </div>
+
+                <div class="pricing-cards">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Basic Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">4</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>1 seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>One website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support first <strong>30 days</strong></span>
+                            </div>
+                        </div>
+
+                        <a href="{{ url_for('start_free') }}" class="plan-button">Start Free Trial</a>
+                    </div>
+
+                    <!-- Value Plan -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Free Plan</div>
+                        <div class="plan-header">
+                            <h3 class="plan-name">Value Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">0</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span><strong>3</strong> seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support <strong>24/7</strong> priority</span>
+                            </div>
+                        </div>
+
+                        <a href="{{ url_for('start_free') }}" class="plan-button plan-button-popular">Start 7-days Free Trial</a>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Pro Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">99</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span><strong>Unlimited</strong> seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support <strong>24/7</strong> priority</span>
+                            </div>
+                        </div>
+
+                        <a href="{{ url_for('start_free') }}" class="plan-button">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="pricing-footer">
+                    <a href="#" class="view-comparison">View Full Plan Comparison →</a>
+                </div>
+            </section>
+
+            <!-- Partner Logos -->
+            <section class="partners">
+                <div class="partner-logo">LOGO</div>
+                <div class="partner-logo">LOGO IPSUM</div>
+                <div class="partner-logo">IPSUM</div>
+                <div class="partner-logo">LOGO</div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/company.js') }}"></script>
+</body>
+
+</html>
