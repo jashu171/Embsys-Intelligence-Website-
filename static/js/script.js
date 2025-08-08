@@ -142,14 +142,15 @@ function sendQueryToBackend(message) {
         .then(data => {
             hideTypingIndicator();
 
-            if (data.error) {
-                addMessage('Sorry, I encountered an error processing your request. Please make sure you have uploaded some documents or try asking a general question.', 'assistant');
+            if (data.error || data.error_code) {
+                const errorMsg = data.message || data.error || 'An error occurred processing your request.';
+                addMessage(`Sorry, I encountered an error: ${errorMsg}`, 'assistant');
             } else {
                 addMessage(data.answer, 'assistant');
 
                 // Add source information if available
-                if (data.context_chunks && data.context_chunks.length > 0) {
-                    addSourceInfo(data.context_chunks[0]);
+                if (data.sources && data.sources.length > 0) {
+                    addSourceInfo(data.sources);
                 }
             }
 
@@ -205,7 +206,7 @@ function addMessage(text, sender) {
     }, 100);
 }
 
-function addSourceInfo(sourceText) {
+function addSourceInfo(sources) {
     const messagesContainer = document.getElementById('messages');
     const lastMessage = messagesContainer.lastElementChild;
 
@@ -213,7 +214,13 @@ function addSourceInfo(sourceText) {
         const contentDiv = lastMessage.querySelector('.message-content');
         const sourceDiv = document.createElement('div');
         sourceDiv.className = 'message-source';
-        sourceDiv.textContent = `Source: ${sourceText.substring(0, 150)}...`;
+        
+        if (Array.isArray(sources)) {
+            sourceDiv.textContent = `Sources: ${sources.join(', ')}`;
+        } else {
+            sourceDiv.textContent = `Source: ${sources.substring(0, 150)}...`;
+        }
+        
         contentDiv.appendChild(sourceDiv);
     }
 }
@@ -302,17 +309,32 @@ function handleFileUpload() {
     })
         .then(response => response.json())
         .then(data => {
-            if (data.error) {
-                showUploadStatus(`<div class="error-message">Error: ${data.error}</div>`);
+            if (data.error || data.error_code) {
+                const errorMsg = data.message || data.error || 'Upload failed';
+                showUploadStatus(`<div class="error-message">Error: ${errorMsg}</div>`);
             } else {
-                showUploadStatus(`
+                let statusHtml = `
                 <div class="success-message">
                     Successfully uploaded and processed ${data.uploaded_files.length} files:
                     <ul style="margin-top: 8px; padding-left: 20px;">
                         ${data.uploaded_files.map(file => `<li>${file}</li>`).join('')}
                     </ul>
                 </div>
-            `);
+            `;
+                
+                // Add email alert information if available
+                if (data.email_alert_results && data.email_alert_results.length > 0) {
+                    statusHtml += `
+                    <div style="margin-top: 12px; padding: 12px; background-color: #e8f5e8; border-radius: 6px;">
+                        <strong>Email Alerts:</strong>
+                        ${data.email_alert_results.map(result => 
+                            `<div>• ${result.filename}: ${result.email_result.sent_count} emails sent</div>`
+                        ).join('')}
+                    </div>
+                `;
+                }
+                
+                showUploadStatus(statusHtml);
             }
         })
         .catch(error => {

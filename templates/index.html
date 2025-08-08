@@ -4,131 +4,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Chat Assistant</title>
-    <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/png">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.png') }}" type="image/png">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}">
+    <title>Embsys Intelligent - Redefining the Future</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="app-container">
+    <div class="container">
+        <!-- Perfect Background Layer -->
+        <div class="perfect-background"></div>
+
+        <!-- Deep Black Blur Overlay -->
+        <div class="deep-blur-overlay"></div>
+
+
+
         <!-- Header -->
-        <div class="header">
-            <div class="header-left">
-                <div class="logo">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Embsys Intelligence</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Pricing</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <div class="cart-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="2" />
-                        <path d="M12 6V18" stroke="currentColor" stroke-width="2" />
-                        <path d="M4 12H20" stroke="currentColor" stroke-width="2" />
+                        <path
+                            d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13M17 13H7"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <span>AI Chat</span>
+                    <span class="cart-badge">2</span>
                 </div>
+                <button class="btn-contact btn-signin">Sign in/Login</button>
             </div>
-            <div class="header-right">
-                <span class="user-count">History</span>
-            </div>
-        </div>
+        </header>
 
         <!-- Main Content -->
-        <div class="main-content">
-            <div class="chat-container" id="chatContainer">
-                <div class="welcome-screen" id="welcomeScreen">
-                    <div class="welcome-content">
-                        <h1>Hello Jashu! 👋 </h1>
+        <main class="main">
+            <!-- Badge -->
+            <div class="badge">
+                <span class="badge-year">2025</span>
+                <span class="badge-text">Next-Gen AI Studio</span>
+            </div>
 
-                        <h2>What are you going to ask today?</h2>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">
+                    Embsys Intelligent<br>
+                    <span class="hero-subtitle">Redefining the Future.</span>
+                </h1>
 
-                        <div class="input-container">
-                            <div class="input-wrapper">
-                                <button class="attach-btn" onclick="document.getElementById('fileInput').click()"
-                                    title="Upload documents">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21.44 11.05l-9.19 9.19a6.003 6.003 0 01-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 01-2.83-2.83l8.49-8.48"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                    </svg>
-                                </button>
+                <div class="hero-description">
+                    <p>Creating latest solutions that redefine innovation.</p>
+                    <p>Stay ahead with AI-powered technology for the future.</p>
+                </div>
 
-                                <input type="text" id="messageInput" placeholder="Ask anything" autocomplete="off">
+                <div class="cta-buttons">
+                    <a href="/start-free" class="btn btn-primary">Start for Free Now →</a>
+                </div>
+            </section>
 
-                                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" />
-                                        <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor"
-                                            stroke-width="2" />
-                                    </svg>
-                                </button>
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-header">
+                    <h2 class="pricing-title">Simple, straightforward pricing</h2>
+                    <p class="pricing-subtitle">Join 500,000+ professionals who use Embsys to boost their SaaS</p>
+
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle">
+                        <span class="billing-option active">Monthly</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="billing-toggle" class="toggle-input">
+                            <label for="billing-toggle" class="toggle-label"></label>
+                        </div>
+                        <span class="billing-option">Yearly</span>
+                        <span class="save-badge">Save up to 15% by paying yearly</span>
+                    </div>
+                </div>
+
+                <div class="pricing-cards">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Basic Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">4</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>1 seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>One website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support first <strong>30 days</strong></span>
                             </div>
                         </div>
+
+                        <a href="/start-free" class="plan-button">Start Free Trial</a>
+                    </div>
+
+                    <!-- Value Plan -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Free Plan</div>
+                        <div class="plan-header">
+                            <h3 class="plan-name">Value Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">0</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span><strong>3</strong> seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support <strong>24/7</strong> priority</span>
+                            </div>
+                        </div>
+
+                        <a href="/start-free" class="plan-button plan-button-popular">Start 7-days Free Trial</a>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Pro Plan</h3>
+                            <div class="plan-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">99</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for marketers / scale up business</p>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited monthly emails</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span><strong>Unlimited</strong> seats</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Custom user permission</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited audience</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Unlimited website</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Email support <strong>24/7</strong> priority</span>
+                            </div>
+                        </div>
+
+                        <a href="/start-free" class="plan-button">Start Free Trial</a>
                     </div>
                 </div>
 
-                <div class="messages" id="messages"></div>
-
-                <!-- Chat Input (shown when not in welcome mode) -->
-                <div class="chat-input-container" id="chatInputContainer" style="display: none;">
-                    <div class="input-wrapper">
-                        <button class="attach-btn" onclick="document.getElementById('fileInput').click()"
-                            title="Upload documents">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21.44 11.05l-9.19 9.19a6.003 6.003 0 01-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 01-2.83-2.83l8.49-8.48"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                        </button>
-
-                        <input type="text" id="chatMessageInput" placeholder="Ask anything" autocomplete="off">
-
-                        <button class="send-btn" id="chatSendBtn" onclick="sendChatMessage()">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" />
-                                <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                        </button>
-                    </div>
+                <div class="pricing-footer">
+                    <a href="#" class="view-comparison">View Full Plan Comparison →</a>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- Footer -->
-        <div class="footer">
-            <button class="footer-btn" onclick="exploreUsecases()">
-                Explore Usecases
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" />
-                </svg>
-            </button>
-        </div>
+            <!-- Partner Logos -->
+            <section class="partners">
+                <div class="partner-logo">LOGO</div>
+                <div class="partner-logo">LOGO IPSUM</div>
+                <div class="partner-logo">IPSUM</div>
+                <div class="partner-logo">LOGO</div>
+            </section>
+        </main>
     </div>
+    <script>
+        // Simple script to ensure smooth scrolling and responsive behavior
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
 
-    <!-- Hidden file input -->
-    <input type="file" id="fileInput" multiple accept=".pdf,.docx,.pptx,.csv,.txt,.md" style="display: none;">
+            // Handle background image loading
+            const background = document.querySelector('.perfect-background');
+            if (background) {
+                background.style.opacity = '1';
+            }
 
-    <!-- Upload Status Modal -->
-    <div class="modal" id="uploadModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Upload Status</h3>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body" id="uploadStatus">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Processing documents...</p>
-                </div>
-            </div>
-        </div>
-    </div>
+            // Billing toggle functionality
+            const toggle = document.getElementById('billing-toggle');
+            const monthlyOption = document.querySelector('.billing-option:first-child');
+            const yearlyOption = document.querySelector('.billing-option:last-child');
+            const priceAmounts = document.querySelectorAll('.price-amount');
+            const pricePeriods = document.querySelectorAll('.price-period');
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+            // Monthly prices
+            const monthlyPrices = ['49', '124', '299'];
+            // Yearly prices (with discount)
+            const yearlyPrices = ['490', '1240', '2990'];
+
+            if (toggle) {
+                toggle.addEventListener('change', function () {
+                    if (this.checked) {
+                        // Yearly billing
+                        monthlyOption.classList.remove('active');
+                        yearlyOption.classList.add('active');
+                        priceAmounts.forEach((amount, index) => {
+                            amount.textContent = yearlyPrices[index];
+                        });
+                        pricePeriods.forEach(period => {
+                            period.textContent = '/year';
+                        });
+                    } else {
+                        // Monthly billing
+                        yearlyOption.classList.remove('active');
+                        monthlyOption.classList.add('active');
+                        priceAmounts.forEach((amount, index) => {
+                            amount.textContent = monthlyPrices[index];
+                        });
+                        pricePeriods.forEach(period => {
+                            period.textContent = '/month';
+                        });
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
